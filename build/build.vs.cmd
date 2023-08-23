@@ -30,6 +30,6 @@ for /f "delims=" %%a in ('cl.exe 2^>^&1') do (
 )
 
 pushd "%~dp0.."
-cl.exe /arch:AVX2 /fp:fast /Ox /EHsc /I. /I ggml\include\ggml /I ggml\include examples\main.cpp stable-diffusion.cpp ggml\src\ggml.c /link /out:build\sd.vs.exe
+cl.exe /arch:AVX2 /fp:fast /Ox /EHsc /GL /I. /I ggml\include\ggml /I ggml\include examples\main.cpp stable-diffusion.cpp ggml\src\ggml.c /link /out:build\sd.vs.exe
 del *.obj
 popd
